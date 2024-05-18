@@ -50,6 +50,12 @@ buildplan9:
 buildlinuxloong64: ## Build tailscale CLI for linux/loong64
 	GOOS=linux GOARCH=loong64 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
 
+buildmacos: ## Build tailscale CLI for darwin/amd64
+	GOOS=darwin GOARCH=amd64 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
+
+buildmacosarm64: ## Build tailscale CLI for darwin/arm64
+	GOOS=darwin GOARCH=arm64 ./tool/go install tailscale.com/cmd/tailscale tailscale.com/cmd/tailscaled
+
 buildmultiarchimage: ## Build (and optionally push) multiarch docker image
 	./build_docker.sh
 
